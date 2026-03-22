@@ -77,7 +77,7 @@ function App() {
             </a>
 
             {/* Video Link */}
-            <a href="#" onClick={(e) => { e.preventDefault(); alert("Task: Record a 3-minute video using screen sharing (OBS or Zoom), upload to YouTube/Drive, and paste the link here!"); }} className="glass p-6 rounded-2xl flex flex-col items-start gap-4 hover:bg-white/40 transition-all hover:shadow-lg group cursor-pointer">
+            <a href="https://d3d89fvb3x2vdi.cloudfront.net/demo.mov" target="_blank" rel="noopener noreferrer" className="glass p-6 rounded-2xl flex flex-col items-start gap-4 hover:bg-white/40 transition-all hover:shadow-lg group cursor-pointer">
               <div className="p-3 bg-rose-100/80 rounded-xl text-rose-600 group-hover:scale-110 transition-transform">
                 <Play className="w-6 h-6" />
               </div>
