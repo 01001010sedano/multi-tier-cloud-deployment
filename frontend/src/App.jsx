@@ -19,11 +19,11 @@ function App() {
           <div className="hidden md:flex gap-6 text-sm font-semibold text-slate-600">
             <a href="#" className="hover:text-blue-600 transition-colors">Overview</a>
             <a href="#resources" className="hover:text-blue-600 transition-colors">Resources</a>
-            <a href="#architecture" className="hover:text-blue-600 transition-colors">Architecture</a>
+            <a href="https://github.com/01001010sedano/multi-tier-cloud-deployment#project-overview" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">Architecture</a>
           </div>
-          <button className="bg-slate-900 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-600 transition-colors">
+          <a href="https://github.com/01001010sedano/multi-tier-cloud-deployment" target="_blank" rel="noopener noreferrer" className="bg-slate-900 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-600 transition-colors">
             View Source
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -39,9 +39,9 @@ function App() {
           <p className="text-lg md:text-xl text-slate-700 max-w-2xl mx-auto font-medium mb-10 leading-relaxed drop-shadow-sm">
             Jane Sedano's Cloud Engineering Capstone. A production-grade multi-tier architecture deployed using Docker, Kubernetes, Terraform, and GitHub Actions CI/CD.
           </p>
-          <button className="glass bg-white/40 hover:bg-white/60 text-blue-700 font-bold py-4 px-10 rounded-full text-lg shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 inline-flex items-center gap-2">
+          <a href="https://github.com/01001010sedano/multi-tier-cloud-deployment#mermaid-architecture-diagram" target="_blank" rel="noopener noreferrer" className="glass bg-white/40 hover:bg-white/60 text-blue-700 font-bold py-4 px-10 rounded-full text-lg shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 inline-flex items-center gap-2">
             Explore Architecture <ArrowRight className="w-5 h-5"/>
-          </button>
+          </a>
         </div>
 
         {/* Resources / Buttons Grid (Glassmorphism) */}
