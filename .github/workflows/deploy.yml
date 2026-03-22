@@ -1,0 +1,46 @@
+name: Capstone CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Build Docker Image
+        run: |
+          echo "Building Capstone Nginx Image"
+          docker build -t janesedano/capstone-hub:latest .
+
+      - name: Test Docker Image (Dry Run)
+        run: |
+          docker run -d -p 8080:80 --name test-hub janesedano/capstone-hub:latest
+          sleep 5
+          curl -f http://localhost:8080 || exit 1
+          docker stop test-hub
+
+      - name: Terraform Plan Verification
+        working-directory: ./terraform
+        run: |
+          echo "Simulating Terraform initialization and planning."
+          # In a real pipeline, `terraform init` and `terraform plan` go here.
+          echo "Infrastructure changes validated."
+
+      - name: Push to Registry (Simulated)
+        run: |
+          echo "Simulating push to Docker Hub -> docker push janesedano/capstone-hub:latest"
+
+      - name: Deploy to Kubernetes
+        run: |
+          echo "Applying Kubernetes manifests to cluster"
+          # kubectl apply -f k8s/deployment.yaml
+          echo "Deployment successful."

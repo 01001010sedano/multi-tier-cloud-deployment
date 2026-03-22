@@ -1,0 +1,16 @@
+# Node dependencies
+frontend/node_modules/
+frontend/dist/
+
+# macOS
+.DS_Store
+
+# Terraform state files (sensitive!)
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/.terraform.lock.hcl
+
+# Environment variables
+.env
+.env.local

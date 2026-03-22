@@ -1,0 +1,45 @@
+# --- Kubernetes Deployment YAML for Capstone Hub ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capstone-hub-deployment
+  labels:
+    app: capstone-hub
+    component: frontend
+spec:
+  replicas: 2 # Ensures high availability across pods
+  selector:
+    matchLabels:
+      app: capstone-hub
+  template:
+    metadata:
+      labels:
+        app: capstone-hub
+    spec:
+      containers:
+      - name: capstone-hub-container
+        image: janesedano/capstone-hub:latest # Pulls the Docker image built from our Dockerfile
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+---
+# --- Kubernetes Service YAML for Capstone Hub ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: capstone-hub-service
+spec:
+  type: LoadBalancer # Exposes the deployment externally
+  selector:
+    app: capstone-hub
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
