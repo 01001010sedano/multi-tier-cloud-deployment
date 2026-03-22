@@ -88,7 +88,7 @@ function App() {
             </a>
 
             {/* GitHub Link */}
-            <a href="#" onClick={(e) => { e.preventDefault(); alert("Task: Create a GitHub repo (e.g. 'Capstone-Cloud') and push this folder. Paste the link here!"); }} className="glass p-6 rounded-2xl flex flex-col items-start gap-4 hover:bg-white/40 transition-all hover:shadow-lg group cursor-pointer">
+            <a href="https://github.com/01001010sedano/multi-tier-cloud-deployment" target="_blank" rel="noopener noreferrer" className="glass p-6 rounded-2xl flex flex-col items-start gap-4 hover:bg-white/40 transition-all hover:shadow-lg group cursor-pointer">
               <div className="p-3 bg-slate-200/80 rounded-xl text-slate-700 group-hover:scale-110 transition-transform">
                 <Github className="w-6 h-6" />
               </div>
